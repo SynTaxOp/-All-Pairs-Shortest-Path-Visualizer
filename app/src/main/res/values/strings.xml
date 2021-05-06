@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">APSLabProject</string>
+    <string-array name="algos">
+        <item>Dijkstra</item>
+        <item>Bellman Ford</item>
+        <item>Johnson</item>
+        <item>Floyd Warshall</item>
+    </string-array>
+    <string-array name="directed">
+        <item>Directed</item>
+        <item>Undirected</item>
+    </string-array>
+</resources>
