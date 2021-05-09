@@ -1,9 +1,21 @@
 package com.vaibhav.apslabproject;
 
+import android.os.Parcelable;
+
+import java.util.ArrayList;
+
 public class Model {
     String pt1;
     String pt2;
     String dist;
+    ArrayList<Integer> path = null;
+
+    public Model(String pt1, String pt2, String dist, ArrayList<Integer> path) {
+        this.pt1 = pt1;
+        this.pt2 = pt2;
+        this.dist = dist;
+        this.path = path;
+    }
 
     public Model(String pt1, String pt2, String dist) {
         this.pt1 = pt1;
@@ -35,12 +47,21 @@ public class Model {
         this.dist = dist;
     }
 
+    public ArrayList<Integer> getPath() {
+        return path;
+    }
+
+    public void setPath(ArrayList<Integer> path) {
+        this.path = path;
+    }
+
     @Override
     public String toString() {
         return "Model{" +
                 "pt1='" + pt1 + '\'' +
                 ", pt2='" + pt2 + '\'' +
                 ", dist='" + dist + '\'' +
+                ", path=" + path +
                 '}';
     }
 }

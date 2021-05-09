@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">APSLabProject</string>
+    <string name="app_name">All Pairs Shortest Path Finder</string>
     <string-array name="algos">
         <item>Dijkstra</item>
         <item>Bellman Ford</item>

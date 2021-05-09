@@ -11,5 +11,5 @@
         android:background="@drawable/background_edit_text"
         android:ems="10"
         android:hint="Enter Distance"
-        android:inputType="textPersonName" />
+        android:inputType="numberSigned" />
 </RelativeLayout>

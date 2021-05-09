@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,12 +33,19 @@ public class Dialog extends AppCompatDialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String dist = distance.getText().toString();
-                        listener.apply(dist);
+                        if(dist.length() == 0) {
+                            Toast.makeText(getContext(), "Cannot be empty", Toast.LENGTH_LONG).show();
+                        } else {
+                            if(dist.equals("-")) {
+                                Toast.makeText(getContext(), "Enter a valid number", Toast.LENGTH_LONG).show();
+                            } else {
+                                listener.apply(dist);
+                            }
+                        }
                     }
                 });
 
         return builder.create();
-        //return super.onCreateDialog(savedInstanceState);
     }
 
     @Override
