@@ -186,10 +186,15 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
                     message.setText("");
                     //operations
                     if(uniquePairs.indexOf(firstPoint + " " + secondPoint) == -1) {
-                       openDialog();
+                        if(firstPoint == secondPoint) {
+                            Toast.makeText(MainActivity.this, "Choose two different nodes. Restart by selecting a new node", Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "Now again select the first node", Toast.LENGTH_SHORT).show();
+                        } else {
+                            openDialog();
+                        }
                     } else {
                         Toast.makeText(MainActivity.this, "Can't use different values for same path. Restart by selecting a new node", Toast.LENGTH_LONG).show();
-                        Toast.makeText(MainActivity.this, "Now again selet the first node", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Now again select the first node", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -205,6 +210,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
     public void apply(String distance) {
         //got distance here
         if(directed) {
+            uniquePairs.add(firstPoint + " " + secondPoint);
             adjacencyMatrix[firstPoint - 1][secondPoint - 1] = Integer.parseInt(distance);
             arrayList.add(new Model(firstPoint + "", secondPoint + "", distance));
             setAdapter(arrayList);
